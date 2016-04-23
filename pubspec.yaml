@@ -1,0 +1,14 @@
+name: polymer_app_layout
+version: 0.0.1
+description: A dart port of the polymer app-layout elements.
+author: Mike Hoolehan <mike@hoolehan.com>
+homepage: https://github.com/ilikerobots/polymer-app-layout
+
+environment:
+  sdk: '>=1.13.0 <2.0.0'
+
+dependencies:
+  polymer: ^1.0.0-rc.16 
+  polymer_elements: ^1.0.0-rc.8
+dev_dependencies:
+  custom_element_apigen: ^0.2.1+1

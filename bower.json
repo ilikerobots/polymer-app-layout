@@ -1,0 +1,15 @@
+{
+  "name": "polyer-app-layout",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ilikerobots/polymer-app-layout",
+  "authors": [
+    "Mike Hoolehan <mike@hoolehan.com>"
+  ],
+  "private": true,
+  "dependencies": {
+    "iron-scroll-target-behavior": "polymerelements/iron-scroll-target-behavior#^1.0.0",
+    "app-layout": "PolymerLabs/app-layout#^0.0.15"
+  },
+  "devDependencies": {
+  }
+}

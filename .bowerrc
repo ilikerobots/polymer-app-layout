@@ -1,0 +1,11 @@
+{
+  "directory": "lib/src",
+  "ignoredDependencies": [
+    "webcomponentsjs"
+  ],
+  "scripts": {
+      "postinstall": "tools/prepBowerLayout.sh"
+
+  }
+}
+

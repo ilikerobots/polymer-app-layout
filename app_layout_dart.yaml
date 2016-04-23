@@ -1,0 +1,37 @@
+files_to_generate:
+  - app-box/app-box.html
+  - app-drawer/app-drawer.html
+  - app-drawer-layout/app-drawer-layout.html
+  - app-scroll-effects/app-scroll-effects.html
+  - app-scroll-effects/app-scroll-effects-behavior.html
+  - app-scroll-effects/effects/waterfall.html
+  - app-scroll-effects/effects/resize-title.html
+  - app-scroll-effects/effects/resize-snapped-title.html
+  - app-scroll-effects/effects/parallax-background.html
+  - app-scroll-effects/effects/material.html
+  - app-scroll-effects/effects/fade-background.html
+  - app-scroll-effects/effects/blend-background.html
+  - app-scrollpos-control/app-scrollpos-control.html
+  - app-toolbar/app-toolbar.html
+  - app-header/app-header.html
+  - app-header-layout/app-header-layout.html
+  - helpers/helpers.html
+  - iron-scroll-target-behavior/iron-scroll-target-behavior.html  
+  - iron-flex-layout/iron-flex-layout.html
+  - iron-resizable-behavior/iron-resizable-behavior.html  
+  - iron-media-query/iron-media-query.html:
+      name_substitutions:
+        query: queryObject
+
+deletion_patterns:
+  - metadata\.html$
+  - index\.html$
+  - demo\.html$
+  - demos$
+  - demo$
+  - README\.md$
+  - ^polymer$
+  - ^webcomponentsjs$
+  - .gitignore$
+  - .travis.yml$
+  - CONTRIBUTING\.md$
