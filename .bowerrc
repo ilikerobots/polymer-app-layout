@@ -4,7 +4,7 @@
     "webcomponentsjs"
   ],
   "scripts": {
-      "postinstall": "tools/prepBowerLayout.sh"
+      "postinstall": "tool/prepBowerLayout.sh"
 
   }
 }

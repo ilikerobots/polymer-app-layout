@@ -22,7 +22,8 @@ files_to_generate:
   - iron-media-query/iron-media-query.html:
       name_substitutions:
         query: queryObject
-
+files_to_load:
+  - package:lib/src/helpers.html
 deletion_patterns:
   - metadata\.html$
   - index\.html$
