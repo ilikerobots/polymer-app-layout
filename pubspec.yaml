@@ -1,5 +1,5 @@
 name: polymer_app_layout
-version: 0.0.1
+version: 0.0.2
 description: A dart port of the polymer app-layout elements.
 author: Mike Hoolehan <mike@hoolehan.com>
 homepage: https://github.com/ilikerobots/polymer-app-layout
