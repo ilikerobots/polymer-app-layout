@@ -8,7 +8,7 @@
   "private": true,
   "dependencies": {
     "iron-scroll-target-behavior": "polymerelements/iron-scroll-target-behavior#^1.0.0",
-    "app-layout": "PolymerLabs/app-layout#^0.0.15"
+    "app-layout": "PolymerLabs/app-layout#^0.0.16"
   },
   "devDependencies": {
   }

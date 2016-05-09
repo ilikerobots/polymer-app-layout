@@ -43,11 +43,12 @@ import 'helpers.dart';
 /// based on the scroll position.
 ///
 /// A scroll effect definition is an object with `setUp()`, `tearDown()` and `run()` functions.
-/// The effect name is used as the key to register the definition in the `Polymer.AppLayout.scrollEffects`
-/// namespace. For example, let's define an effect that resizes the header's logo:
+///
+/// To register the effect, you can use `Polymer.AppLayout.registerEffect(effectName, effectDef)`
+/// For example, let's define an effect that resizes the header's logo:
 ///
 /// ```js
-/// Polymer.AppLayout.scrollEffects.logo = {
+/// Polymer.AppLayout.registerEffect('resizable-logo', {
 ///   setUp: function(config) {
 ///     // the effect's config is passed to the setUp.
 ///     this._fxResizeLogo = { logo: Polymer.dom(this).querySelector('[logo]') };
@@ -62,12 +63,12 @@ import 'helpers.dart';
 ///      // clean up and reset of states
 ///      delete this._fxResizeLogo;
 ///   }
-/// };
+/// });
 /// ```
 /// Now, you can consume the effect:
 ///
 /// ```html
-/// <app-header id="appHeader" effects="logo">
+/// <app-header id="appHeader" effects="resizable-logo">
 ///   <img logo src="logo.svg">
 /// </app-header>
 /// ```
@@ -75,7 +76,7 @@ import 'helpers.dart';
 /// ### Imperative API
 ///
 /// ```js
-/// var logoEffect = appHeader.createEffect('logo', effectConfig);
+/// var logoEffect = appHeader.createEffect('resizable-logo', effectConfig);
 /// // run the effect: logoEffect.run(progress);
 /// // tear down the effect: logoEffect.tearDown();
 /// ```
@@ -122,11 +123,10 @@ abstract class AppScrollEffectsBehavior implements CustomElementProxyMixin, Iron
   get effectsConfig => jsElement[r'effectsConfig'];
   set effectsConfig(value) { jsElement[r'effectsConfig'] = (value is Map || (value is Iterable && value is! JsArray)) ? new JsObject.jsify(value) : value;}
 
-  /// Creates an effect object from an effect name and configuration that can be used to run
+  /// Creates an effect object from an effect's name that can be used to run
   /// effects programmatically.
-  /// [effectName]: The name of an effect defined in `Polymer.AppLayout.scrollEffects`
-  /// [effectConfig]: The effect config object if the effect accepts config
-  ///       values. (Optional)
+  /// [effectName]: The effect's name registered via `Polymer.AppLayout.registerEffect`.
+  /// [effectConfig]: The effect config object. (Optional)
   createEffect(String effectName, effectConfig) =>
       jsElement.callMethod('createEffect', [effectName, effectConfig]);
 

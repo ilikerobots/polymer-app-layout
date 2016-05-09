@@ -80,11 +80,6 @@ class AppDrawerLayout extends HtmlElement with CustomElementProxyMixin, PolymerB
   bool get forceNarrow => jsElement[r'forceNarrow'];
   set forceNarrow(bool value) { jsElement[r'forceNarrow'] = value; }
 
-  /// Returns true if the panel is in narrow layout. This is useful if you
-  /// need to show/hide elements based on the layout.
-  bool get narrow => jsElement[r'narrow'];
-  set narrow(bool value) { jsElement[r'narrow'] = value; }
-
   /// If the viewport's width is smaller than this value, the panel will change to narrow layout.
   /// In the mode the drawer will be closed.
   String get responsiveWidth => jsElement[r'responsiveWidth'];

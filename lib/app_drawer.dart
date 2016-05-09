@@ -47,11 +47,15 @@ class AppDrawer extends HtmlElement with CustomElementProxyMixin, PolymerBase {
   AppDrawer.created() : super.created();
   factory AppDrawer() => new Element.tag('app-drawer');
 
-  /// The alignment of the drawer on the screen ('start', 'end', 'left', or 'right').
+  /// The alignment of the drawer on the screen ('left', 'right', 'start' or 'end').
   /// 'start' computes to left and 'end' to right in LTR layout and vice versa in RTL
   /// layout.
   String get align => jsElement[r'align'];
   set align(String value) { jsElement[r'align'] = value; }
+
+  /// Trap keyboard focus when the drawer is opened and not persistent.
+  bool get noFocusTrap => jsElement[r'noFocusTrap'];
+  set noFocusTrap(bool value) { jsElement[r'noFocusTrap'] = value; }
 
   /// The opened state of the drawer.
   bool get opened => jsElement[r'opened'];
