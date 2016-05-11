@@ -11,7 +11,8 @@ Dart polymer wrappers for [PolymerLabs app-layout](https://github.com/PolymerLab
 
 ## Rebuilding
 
-To regenerate the Dart API from polymer source, follow the steps below.  The specific version used as a basis can be specified in the bower.json.
+Although not necessary for normal use, this package can be rebuilt from the original polymer source using the procedure
+below.  The specific version used as a basis can be specified in bower.json.
 
 1. Fetch the polymer element source
 ```sh
