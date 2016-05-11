@@ -9,6 +9,17 @@ Dart polymer wrappers for [PolymerLabs app-layout](https://github.com/PolymerLab
 
 [View demos at polyer-app-layout-demos](http://ilikerobots.github.io/polymer-app-layout-demos/)
 
+## Testing
+
+The original app-layout tests are in the process of being ported.  The ported tests can be run as normal dart tests.
+For example, to run on dartium: ```pub run test -pdartium ```
+
+To run tests as javascript, the pub serve and test execution must be performed separately. Run
+```pub serve test --port=8080``` from one terminal and ```pub run test -pchrome --pub-serve=8080```
+from a second.
+
+Note that tests are specifically blocked from running on Firefox currently in order to utilize [Travis CI](https://pub.dartlang.org/packages/polymer_app_layout).
+
 
 ## Rebuilding
 
@@ -27,3 +38,4 @@ pub run custom_element_apigen:update app_layout_dart.yaml
 ```
 
 For more information on using custom_element_apigen, see <https://pub.dartlang.org/packages/custom_element_apigen>
+
