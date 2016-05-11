@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>test for app-toolbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="packages/web_components/webcomponents.js"></script>
+    <link rel="x-dart-test" href="app_drawer_test.dart">
+    <script src="packages/test/dart.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<template id="testDrawer">
+        <app-drawer></app-drawer>
+</template>
+
+<template id="rtlDrawer">
+        <app-drawer dir="rtl"></app-drawer>
+    </template>
+
+<template id="focusDrawer">
+        <focus-drawer></focus-drawer>
+</template>
+
+<dom-module id="focus-drawer">
+    <template>
+        <button>Button</button>
+        <app-drawer>
+            <input type="text">
+            <div tabindex="0">Div</div>
+            <span>Not focusable</span>
+        </app-drawer>
+    </template>
+    <script>
+        HTMLImports.whenReady(function() {
+            Polymer({ is: 'focus-drawer' });
+        });
+    </script>
+</dom-module>
+
+</body>
+</html>
