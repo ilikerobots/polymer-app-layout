@@ -1,6 +1,7 @@
 # polymer-app-layout
 
 [![Pub](https://img.shields.io/pub/v/polymer_app_layout.svg?maxAge=2592000?style=flat-square)](https://pub.dartlang.org/packages/polymer_app_layout)
+[![Travis](https://img.shields.io/travis/ilikerobots/polymer-app-layout.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/ilikerobots/polymer-app-layout)
 
 Dart polymer wrappers for [PolymerLabs app-layout](https://github.com/PolymerLabs/app-layout) elements.
 
