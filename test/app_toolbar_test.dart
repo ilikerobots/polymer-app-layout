@@ -1,4 +1,4 @@
-@TestOn('browser')
+@TestOn('browser && !firefox')
 library polyer_app_layout.test.app_toolbar_test;
 
 import 'dart:async';
