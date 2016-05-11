@@ -204,8 +204,7 @@ main() async {
       drawer.persistent = false;
       await wait(350);
 
-      //expect(listenerSpy.callCount, equals(2)); //should fire after toggling persistent when opened
-      expect(listenerSpy.callCount, equals(1)); //TODO FIXME but is not
+      expect(listenerSpy.callCount, equals(2)); //should fire after toggling persistent when opened
 
       drawer.fire('track', detail: { 'state': 'start'});
       drawer.fire('track', detail: { 'state': 'track', 'dx': 0, 'ddx': 0});
@@ -214,8 +213,7 @@ main() async {
 
       await wait(350);
       expect(drawer.opened, isFalse);
-      //expect(listenerSpy.callCount, equals(3)); //should fire after flinging
-      expect(listenerSpy.callCount, equals(2));
+      expect(listenerSpy.callCount, equals(3)); //should fire after flinging
 
       drawer.fire('track', detail: { 'state': 'start'});
       drawer.fire('track', detail: { 'state': 'track', 'dx': 10 * TRACK_SCALAR, 'ddx': 10 * TRACK_SCALAR});
@@ -223,8 +221,7 @@ main() async {
 
       await wait(350);
       expect(drawer.opened, isFalse);
-      //expect(listenerSpy.callCount, equals(4)); //should fire after swiping even if opened state unchanged
-      expect(listenerSpy.callCount, equals(2)); //TODO FIXME but is not
+      expect(listenerSpy.callCount, equals(4)); //should fire after swiping even if opened state unchanged
 
       drawer.fire('track', detail: { 'state': 'start'});
       drawer.fire('track', detail: { 'state': 'track', 'dx': 200 * TRACK_SCALAR, 'ddx': 200 * TRACK_SCALAR});
@@ -232,8 +229,7 @@ main() async {
 
       await wait(350);
       expect(drawer.opened, isTrue);
-      //expect(listenerSpy.callCount, equals(5)); //should fire after swiping
-      expect(listenerSpy.callCount, equals(3));
+      expect(listenerSpy.callCount, equals(5)); //should fire after swiping
 
       drawer.fire('track', detail: { 'state': 'start'});
       drawer.fire('track', detail: { 'state': 'track', 'dx': -1000 * TRACK_SCALAR, 'ddx': -1000 * TRACK_SCALAR});
@@ -241,8 +237,7 @@ main() async {
 
       await wait(350);
       expect(drawer.opened, isFalse);
-      //expect(listenerSpy.callCount, equals(6)); //should fire after swiping beyond end state
-      expect(listenerSpy.callCount, equals(4));
+      expect(listenerSpy.callCount, equals(6)); //should fire after swiping beyond end state
     });
 
     test('track events block user selection', () async {
@@ -621,7 +616,7 @@ main() async {
       drawer.opened = true;
 
       await wait(350);
-      expect(document.body.style.overflow, equals('')); //TODO FIXME should be 'hidden'
+      expect(document.body.style.overflow, equals('hidden'));
 
       drawer.persistent = true;
 
@@ -631,7 +626,7 @@ main() async {
       drawer.persistent = false;
 
       await wait(350);
-      expect(document.body.style.overflow, equals('')); //TODO FIXME should be 'hidden'
+      expect(document.body.style.overflow, equals('hidden'));
 
       drawer.opened = false;
 
