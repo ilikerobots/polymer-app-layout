@@ -18,6 +18,7 @@ transformers:
     entry_points:
     - test/app_toolbar_test.html
     - test/app_drawer_test.html
+    - test/app_drawer_layout_test.html
     $include: test/**_test{.*,}.{dart,html}
 - test/pub_serve:
     $include: test/**_test{.*,}.dart

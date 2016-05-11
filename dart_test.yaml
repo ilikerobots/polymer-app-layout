@@ -1,0 +1,4 @@
+platforms: [dartium]
+presets:
+  locally_passing:
+    tags: {local_fail: {skip: true}}

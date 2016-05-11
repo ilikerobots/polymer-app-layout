@@ -4,6 +4,7 @@ library polyer_app_layout.test.app_drawer_test;
 import 'dart:async';
 import 'dart:html';
 import 'dart:js';
+import 'package:polymer/polymer.dart';
 import 'package:polymer_app_layout/app_drawer.dart';
 import 'package:test/test.dart';
 import 'package:web_components/web_components.dart';
@@ -184,7 +185,6 @@ main() async {
       expect(listenerSpy.called, isTrue);
     });
 
-
     test('app-drawer-transitioned', () async {
       await wait(100);
       var listenerSpy = sinon.spy();
@@ -236,7 +236,7 @@ main() async {
       await wait(350);
       expect(drawer.opened, isFalse);
       expect(listenerSpy.callCount, equals(6)); //should fire after swiping beyond end state
-    });
+    }, tags: ["local_fail"]);
 
     test('track events block user selection', () async {
       await wait(350);
@@ -630,7 +630,7 @@ main() async {
 
       await wait(350);
       expect(document.body.style.overflow, equals('')); //should not block scrolling when closed
-    });
+    }, tags: ["local_fail"]);
 
     //TODO port focus trap tests$
 
@@ -677,4 +677,9 @@ main() async {
 
 
   });
+}
+
+@PolymerRegister('focus-drawer')
+class FocusDrawer extends PolymerElement {
+  FocusDrawer.created() : super.created();
 }
