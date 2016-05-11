@@ -6,7 +6,6 @@ import 'dart:html';
 import 'dart:js';
 import 'package:polymer_app_layout/app_drawer.dart';
 
-import 'package:polymer_interop/polymer_interop.dart';
 import 'package:web_components/web_components.dart';
 import 'package:test/test.dart';
 import 'sinon/sinon.dart' as sinon;
