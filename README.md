@@ -11,13 +11,9 @@ Dart polymer wrappers for [PolymerLabs app-layout](https://github.com/PolymerLab
 
 ## Testing
 
-The original app-layout tests are in the process of being ported.  The ported tests can be run as normal dart tests.
-For example, to run on dartium (default): ```pub run test```  As usual, tests can be run on other platforms with
-```-p<platform>```
+The original app-layout tests are in the process of being ported.  The ported tests can be run as normal dart tests.  For example, to run on dartium (default): ```pub run test```  As usual, tests can be run on other platforms with ```-p<platform>```
 
-To run tests as javascript, the pub serve and test execution must be performed separately. Run
-```pub serve test --port=8080``` from one terminal and ```pub run test -pchrome --pub-serve=8080```
-from a second.
+To run tests as javascript, the pub serve and test execution must be performed separately. Run ```pub serve test --port=8080``` from one terminal and ```pub run test -pchrome --pub-serve=8080``` from a second.
 
 Note that tests are specifically blocked from running on Firefox currently in order to utilize [Travis CI](https://pub.dartlang.org/packages/polymer_app_layout).
 
