@@ -85,6 +85,9 @@ class AppDrawer extends HtmlElement with CustomElementProxyMixin, PolymerBase {
   open() =>
       jsElement.callMethod('open', []);
 
+  /// Resets the layout. If you changed the size of app-header via CSS
+  /// you can notify the changes by either firing the `iron-resize` event
+  /// or calling `resetLayout` directly.
   resetLayout() =>
       jsElement.callMethod('resetLayout', []);
 

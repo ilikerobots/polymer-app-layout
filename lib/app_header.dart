@@ -41,9 +41,10 @@ import 'iron_flex_layout.dart';
 ///
 /// ### Primary element
 ///
-/// This is the element in the light DOM that remains at the top of the header when this is condensed.
-/// By default, if no element in the light DOM has the `primary` attribute, the `primary` element
-/// becomes the first instance of app-toolbar. For example:
+/// As the header condenses, the immediate children of app-header are stacked up.
+/// In this case, the primary element is the immediate child that would always stayed above
+/// the others as the header condenses. By default, the `primary` element is the first app-toolbar
+/// that is an immediate children of app-header.
 ///
 /// ```html
 /// <app-header condenses>
@@ -148,13 +149,10 @@ import 'iron_flex_layout.dart';
 /// The fraction determines how far the background moves relative to the scroll position.
 /// This value can be assigned via the `scalar` config value and it is typically a value
 /// between 0 and 1 inclusive. If `scalar=0`, the background doesn't move away from the header.
-/// [More about configuration for scroll effects](/app-scroll-effects#configuring-effects)
 ///
 /// **resize-title**
-/// Progressively interpolates the size of the title element based on the scroll position.
-/// This effect requires two title elements in the light dom. One that has the `title` attribute
-/// and represents the state when the header is completely visible and another with the
-/// `condensed-title` attribute when the header is condensed. For example:
+/// Progressively interpolates the size of the title from the element with the `title` attribute
+/// to the element with the `condensed-title` attribute as the header condenses. For example:
 ///
 /// ```html
 /// <app-header condenses reveals effects="resize-title">
@@ -196,13 +194,20 @@ import 'iron_flex_layout.dart';
 /// **material**
 /// Installs the waterfall, resize-title, blend-background and parallax-background effects.
 ///
+/// ### Content attributes
+///
+/// Attribute | Description         | Default
+/// ----------|---------------------|----------------------------------------
+/// `primary` | Element that remains at the top when the header condenses. | The first app-toolbar in the light DOM.
+///
+///
 /// ## Styling
 ///
 /// Mixin | Description | Default
-/// ----------------|-------------|----------
-/// `--app-header-background-front-layer` | Applies to the front layer of the background | {}
-/// `--app-header-background-rear-layer` | Applies to the rear layer of the background | {}
-/// `--app-header-shadow` | Applies to the shadow | {}
+/// ------|-------------|----------
+/// `--app-header-background-front-layer` | Applies to the front layer of the background. | {}
+/// `--app-header-background-rear-layer` | Applies to the rear layer of the background. | {}
+/// `--app-header-shadow` | Applies to the shadow. | {}
 @CustomElementProxy('app-header')
 class AppHeader extends HtmlElement with CustomElementProxyMixin, PolymerBase, IronScrollTargetBehavior, AppScrollEffectsBehavior, IronResizableBehavior {
   AppHeader.created() : super.created();
@@ -264,7 +269,9 @@ class AppHeader extends HtmlElement with CustomElementProxyMixin, PolymerBase, I
   bool isOnScreen() =>
       jsElement.callMethod('isOnScreen', []);
 
-  /// Resets the layout. This method is automatically called when the element is attached to the DOM.
+  /// Resets the layout. If you changed the size of app-header via CSS
+  /// you can notify the changes by either firing the `iron-resize` event
+  /// or calling `resetLayout` directly.
   resetLayout() =>
       jsElement.callMethod('resetLayout', []);
 

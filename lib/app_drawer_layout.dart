@@ -22,10 +22,10 @@ import 'app_drawer.dart';
 /// ```html
 /// <app-drawer-layout>
 ///   <app-drawer>
-///     <!\-\- drawer content \-\->
+///     drawer content
 ///   </app-drawer>
 ///   <div>
-///     <!\-\- main content \-\->
+///     main content
 ///   </div>
 /// </app-drawer-layout>
 /// ```
@@ -35,10 +35,10 @@ import 'app_drawer.dart';
 /// ```html
 /// <app-drawer-layout>
 ///   <app-drawer align="end">
-///     <!\-\- drawer content \-\->
+///      drawer content
 ///   </app-drawer>
 ///   <div>
-///     <!\-\- main content \-\->
+///     main content
 ///   </div>
 /// </app-drawer-layout>
 /// ```
@@ -48,7 +48,7 @@ import 'app_drawer.dart';
 /// ```html
 /// <app-drawer-layout>
 ///   <app-drawer>
-///     <!\-\- drawer content \-\->
+///     drawer-content
 ///   </app-drawer>
 ///   <app-header-layout>
 ///     <app-header>
@@ -57,9 +57,22 @@ import 'app_drawer.dart';
 ///       </app-toolbar>
 ///     </app-header>
 ///
-///     <!\-\- main content \-\->
+///     main content
 ///
 ///   </app-header-layout>
+/// </app-drawer-layout>
+/// ```
+///
+/// Add the `fullbleed` attribute to app-drawer-layout to make it fit the size of its container:
+///
+/// ```html
+/// <app-drawer-layout fullbleed>
+///   <app-drawer>
+///      drawer content
+///   </app-drawer>
+///   <div>
+///     main content
+///   </div>
 /// </app-drawer-layout>
 /// ```
 ///
@@ -73,7 +86,7 @@ class AppDrawerLayout extends HtmlElement with CustomElementProxyMixin, PolymerB
   AppDrawerLayout.created() : super.created();
   factory AppDrawerLayout() => new Element.tag('app-drawer-layout');
 
-  /// Gets the drawer element.
+  /// A reference to the app-drawer element.
   get drawer => jsElement[r'drawer'];
 
   /// If true, ignore `responsiveWidth` setting and force the narrow layout.

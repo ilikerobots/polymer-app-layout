@@ -24,7 +24,7 @@ import 'iron_flex_layout.dart';
 ///     </app-toolbar>
 ///   </app-header>
 ///   <div>
-///     <!\-\- content goes here \-\->
+///     main content
 ///   </div>
 /// </app-header-layout>
 /// ```
@@ -39,7 +39,7 @@ import 'iron_flex_layout.dart';
 ///     </app-toolbar>
 ///   </app-header>
 ///   <div>
-///     <!\-\- content goes here \-\->
+///     main content
 ///   </div>
 /// </app-header-layout>
 /// ```
@@ -53,6 +53,7 @@ class AppHeaderLayout extends HtmlElement with CustomElementProxyMixin, PolymerB
   bool get hasScrollingRegion => jsElement[r'hasScrollingRegion'];
   set hasScrollingRegion(bool value) { jsElement[r'hasScrollingRegion'] = value; }
 
+  /// A reference to the app-header element.
   get header => jsElement[r'header'];
 
   /// Resets the layout. This method is automatically called when the element is attached
