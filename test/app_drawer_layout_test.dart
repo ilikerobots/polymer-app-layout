@@ -42,7 +42,7 @@ main() async {
       drawerLayout.responsiveWidth = '0px';
       drawerLayout.forceNarrow = true;
 
-      expect(drawerLayout.jsElement['_narrow'], isTrue);
+      expect(drawerLayout.narrow, isTrue);
     });
 
     test('responsiveWidth', () async {
@@ -50,13 +50,13 @@ main() async {
       drawerLayout.responsiveWidth = '0px';
 
       await wait(50);
-      expect(drawerLayout.jsElement['_narrow'], isFalse);
+      expect(drawerLayout.narrow, isFalse);
       expect(drawerToggle.getComputedStyle('drawerToggle').display, equals('none'));
 
       drawerLayout.responsiveWidth = '10000px';
 
       await wait(50);
-      expect(drawerLayout.jsElement['_narrow'], isTrue);
+      expect(drawerLayout.narrow, isTrue);
       expect(drawerToggle.getComputedStyle('drawerToggle').display, isNot(equals('none')));
     });
 

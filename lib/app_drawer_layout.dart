@@ -63,6 +63,27 @@ import 'app_drawer.dart';
 /// </app-drawer-layout>
 /// ```
 ///
+/// Add the `drawer-toggle` attribute to elements inside `app-drawer-layout` that toggle the drawer on tap events:
+///
+/// ```html
+/// <app-drawer-layout>
+///   <app-drawer>
+///     drawer-content
+///   </app-drawer>
+///   <app-header-layout>
+///     <app-header>
+///       <app-toolbar>
+///         <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+///         <div title>App name</div>
+///       </app-toolbar>
+///     </app-header>
+///
+///     main content
+///
+///   </app-header-layout>
+/// </app-drawer-layout>
+/// ```
+///
 /// Add the `fullbleed` attribute to app-drawer-layout to make it fit the size of its container:
 ///
 /// ```html
@@ -93,8 +114,13 @@ class AppDrawerLayout extends HtmlElement with CustomElementProxyMixin, PolymerB
   bool get forceNarrow => jsElement[r'forceNarrow'];
   set forceNarrow(bool value) { jsElement[r'forceNarrow'] = value; }
 
-  /// If the viewport's width is smaller than this value, the panel will change to narrow layout.
-  /// In the mode the drawer will be closed.
+  /// Returns true if it is in narrow layout. This is useful if you need to show/hide
+  /// elements based on the layout.
+  bool get narrow => jsElement[r'narrow'];
+  set narrow(bool value) { jsElement[r'narrow'] = value; }
+
+  /// If the viewport's width is smaller than this value, the panel will change to narrow
+  /// layout. In the mode the drawer will be closed.
   String get responsiveWidth => jsElement[r'responsiveWidth'];
   set responsiveWidth(String value) { jsElement[r'responsiveWidth'] = value; }
 
