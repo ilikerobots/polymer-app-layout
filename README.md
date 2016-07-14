@@ -1,7 +1,10 @@
-# polymer-app-layout
+# polymer-app-layout - DEPRECATED
 
 [![Pub](https://img.shields.io/pub/v/polymer_app_layout.svg?maxAge=2592000?style=flat-square)](https://pub.dartlang.org/packages/polymer_app_layout)
 [![Travis](https://img.shields.io/travis/ilikerobots/polymer-app-layout.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/ilikerobots/polymer-app-layout)
+
+**NB** The app-layout elements have now been directly incorporated into the [polymer_elements 1.0.0-rc.9](https://pub.dartlang.org/packages/polymer_elements/versions/1.0.0-rc.9) package.  This project is now deprecated.
+
 
 Dart polymer wrappers for [app-layout](https://github.com/PolymerElements/app-layout) Polymer elements.
 
